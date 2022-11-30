@@ -2,8 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,300&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&display=swap');
 
 :root {
-    --primary: #fff;
-
+    --primary-color: #fe2c55;
+    --black: #000;
+    --text-color: #333;
     //DefaultLayout
     --defaut-layout-header-height: 60px;
     --defaut-layout-header-width: 1150px;
@@ -23,4 +24,16 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-family: 'Roboto', sans-serif;
     font-size: 1.6rem;
+}
+
+input,
+button,
+[tabindex] {
+    border: none;
+    outline: none;
+}
+
+a[href] {
+    color: var(--text-color);
+    text-decoration: none;
 }
