@@ -3,9 +3,15 @@
 
 :root {
     --primary: #fff;
+
+    //DefaultLayout
+    --defaut-layout-header-height: 60px;
+    --defaut-layout-header-width: 1150px;
 }
 
 * {
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
