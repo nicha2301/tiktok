@@ -27,6 +27,7 @@
     font-weight: 600;
     color: rgba(22, 24, 35, 0.5);
 }
+
 .search {
     display: flex;
     overflow: hidden;
@@ -93,4 +94,20 @@
         background: rgba(22, 24, 35, .06);
     }
 
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.more-btn {
+    background: transparent;
+}
+
+.more-icon {
+    font-size: 2rem;
+    padding: 4px;
+    margin-left: 26px;
 }

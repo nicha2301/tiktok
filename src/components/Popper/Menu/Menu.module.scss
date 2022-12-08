@@ -1,0 +1,32 @@
+.menu-list {
+    width: 224px;
+
+    .menu-item {
+        display: flex;
+        width: 100%;
+        flex: 1;
+        height: 42px;
+        padding: 9px 16px;
+        border-radius: 4px;
+        font-size: 1.6rem;
+        font-weight: 600;
+        background-color: var(--white);
+        border-radius: 0;
+        cursor: pointer;
+        user-select: none;
+
+        span {
+            svg {
+                width: 20px;
+            }
+        }
+    
+        &:hover {
+            background: rgba(22, 24, 35, 0.03);
+        }
+    }
+}
+
+.menu-container {
+    padding-bottom: 8px;
+}
