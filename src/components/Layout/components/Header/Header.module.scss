@@ -11,6 +11,7 @@
     align-items: center;
     justify-content: space-between;
     width: var(--defaut-layout-header-width);
+    padding: 0 24px 0 20px;
     height: 100%;
 }
 
@@ -110,4 +111,5 @@
     font-size: 2rem;
     padding: 4px;
     margin-left: 26px;
+    cursor: pointer;
 }

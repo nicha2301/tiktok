@@ -2,14 +2,14 @@ import { useState, useEffect } from "react";
 import classNames from "classnames/bind";
 import Tippy from '@tippyjs/react/headless';
 import { FontAwesomeIcon, } from "@fortawesome/react-fontawesome";
-import { faCircleXmark, faSpinner, faMagnifyingGlass, faEllipsisVertical, faLanguage, faCircleQuestion, faKeyboard } from "@fortawesome/free-solid-svg-icons";
+import { faCircleXmark, faSpinner, faMagnifyingGlass, faEllipsisVertical, faLanguage } from "@fortawesome/free-solid-svg-icons";
 
 import images from "~/assets/images";
 import styles from './Header.module.scss';
 import { Menu, Wrapper as PopperWrapper } from "~/components/Popper";
 import AccountItem from "~/components/AccountItem";
 import Button from "~/components/Button";
-import { faMoon } from "@fortawesome/free-regular-svg-icons";
+import { faCircleQuestion, faKeyboard, faMoon } from "@fortawesome/free-regular-svg-icons";
 
 
 const cx = classNames.bind(styles);
@@ -17,7 +17,22 @@ const cx = classNames.bind(styles);
 const MENU_ITEMS = [
     {
         icon: <FontAwesomeIcon icon={faLanguage} />,
-        title: 'English'
+        title: 'English',
+        children: {
+            title: 'Language',
+            data: [
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English'
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                }
+            ]
+        }
     },
     {
         icon: <FontAwesomeIcon icon={faCircleQuestion} />,
@@ -30,7 +45,7 @@ const MENU_ITEMS = [
     },
     {
         icon: <FontAwesomeIcon icon={faMoon} />,
-        title:  'Dark mode'
+        title: 'Dark mode'
     }
 ]
 
@@ -42,6 +57,17 @@ function Header() {
             setShow([1, 1])
         ))
     })
+
+    //Handle menu
+    const handleMenuChange = (menuItem) => {
+        switch (menuItem.type) {
+            case 'language':
+                //change language
+                break
+            default:
+        }
+    }
+
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -81,7 +107,7 @@ function Header() {
                 <div className={cx('actions')}>
                     <Button text> Upload</Button>
                     <Button primary > Log in</Button>
-                    <Menu items ={MENU_ITEMS}>
+                    <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
                         <button className={cx('more-btn')}>
                             <FontAwesomeIcon className={cx('more-icon')} icon={faEllipsisVertical} />
                         </button>
