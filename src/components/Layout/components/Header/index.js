@@ -12,13 +12,15 @@ import { Menu, Wrapper as PopperWrapper } from "~/components/Popper";
 import AccountItem from "~/components/AccountItem";
 import Button from "~/components/Button";
 import { faCircleQuestion, faKeyboard, faMessage, faMoon, faPaperPlane, faUser } from "@fortawesome/free-regular-svg-icons";
+import { FeedBackIcon, GetCoinIcon, KeyBoardIcon, LanguageIcon, LiveIcon, LogOutIcon, MessageIcon, MoonIcon, PaperPlaneIcon, PersonalIcon, PlusIcon, SearchIcon, SettingIcon } from "~/components/Icon";
+import Images from "~/components/Images";
 
 
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
     {
-        icon: <FontAwesomeIcon icon={faLanguage} />,
+        icon: <LanguageIcon />,
         title: 'English',
         children: {
             title: 'Language',
@@ -37,16 +39,16 @@ const MENU_ITEMS = [
         }
     },
     {
-        icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+        icon: <FeedBackIcon />,
         title: 'Feedback and help',
         to: '/feedback'
     },
     {
-        icon: <FontAwesomeIcon icon={faKeyboard} />,
+        icon: <KeyBoardIcon />,
         title: 'Keyboard shortcuts'
     },
     {
-        icon: <FontAwesomeIcon icon={faMoon} />,
+        icon: <MoonIcon />,
         title: 'Dark mode'
     }
 ]
@@ -76,23 +78,28 @@ function Header() {
 
     const userMenu = [
         {
-            icon: <FontAwesomeIcon icon={faUser} />,
+            icon: <PersonalIcon />,
             title: 'View profile',
             to: '/user'
         },
         {
-            icon: <FontAwesomeIcon icon={faCoins} />,
+            icon: <GetCoinIcon />,
             title: 'Get Coins',
             to: '/getcoin'
         },
         {
-            icon: <FontAwesomeIcon icon={faGear} />,
+            icon: <LiveIcon />,
+            title: 'Live Studio',
+            to: '/getcoin'
+        },
+        {
+            icon: <SettingIcon />,
             title: 'Settings',
             to: '/setting'
         },
         ...MENU_ITEMS,
         {
-            icon: <FontAwesomeIcon icon={faArrowRightFromBracket} />,
+            icon: <LogOutIcon />,
             title: 'Log out',
             to: '/logout',
             separate: true
@@ -130,7 +137,7 @@ function Header() {
                         <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
 
                         <button className={cx('search-btn')}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
+                            <SearchIcon />
                         </button>
                     </div>
                 </Tippy>
@@ -144,12 +151,12 @@ function Header() {
                         <>
                             <Tippy content="Messages" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faPaperPlane} />
+                                    <PaperPlaneIcon />
                                 </button>
                             </Tippy>
                             <Tippy content="Inbox">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faMessage} />
+                                    <MessageIcon />
                                 </button>
                             </Tippy>
                         </>
@@ -158,9 +165,13 @@ function Header() {
                             <Button primary > Log in</Button>
                         </>
                     )}
-                    <Menu items={userMenu} onChange={handleMenuChange}>
+                    <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img className={cx('user-avatar')} src="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/e59f8ba066516faafe8493daa00b6090.jpeg?x-expires=1670731200&x-signature=%2Foze%2Fp4k41lSBgAMjVGrFS17dRk%3D" alt="Chau Annh" ></img>
+                            <Images
+                                className={cx('user-avatar')}
+                                src="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/e59f8ba066516faafe8493daa00b6090.jpeg?x-expires=1670731200&x-signature=%2Foze%2Fp4k41lSBgAMjVGrFS17dRk%3D"
+                                alt="Chau Annh"
+                            />
                         ) : (
                             <button className={cx('more-btn')}>
                                 <FontAwesomeIcon className={cx('more-icon')} icon={faEllipsisVertical} />
