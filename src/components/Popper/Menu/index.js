@@ -38,18 +38,22 @@ function Menu({ children, items, onChange = defaultFn }) {
     return (
         <Tippy
             interactive
+            visible
+            offset={[14, 8]}
             delay={[0, 600]}
             placement="bottom-end"
             render={attrs => (
                 <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
                     <PopperWrapper className={cx('menu-container')}>
                         {history.length > 1 && <Header title='Language' onBack={() => {
-                            setHistory(prev => prev.slice(0, history.length - 1))
+                            console.log(setHistory(prev => prev.slice(0, history.length - 1)));
                         }} />}
                         {renderItem()}
                     </PopperWrapper>
                 </div>
             )}
+
+            onHide={() => setHistory(prev => prev.slice(0, 1))}
         >
             {children}
         </Tippy>

@@ -6,7 +6,7 @@
     max-height: 36px;
     padding: 9px 16px;
     border-radius: 4px;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 700;
     background-color: var(--white);
     border: 1px solid transparent;
@@ -29,6 +29,14 @@
 }
 
 //Button type
+
+.upload {
+    border-color:rgba(22, 24, 35, 0.12);
+
+    &:hover {
+        background-color: rgba(22, 24, 35, .03);
+    }
+}
 
 .rounded {
     border-radius: 999px;
@@ -68,7 +76,6 @@
 .text {
     &:hover {
         text-decoration: underline;
-        ;
     }
 }
 
@@ -83,4 +90,8 @@
 .large {
     padding: 14px 16px;
     min-width: 140px;
+}
+
+.thin {
+    font-weight: 500;
 }

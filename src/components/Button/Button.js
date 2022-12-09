@@ -4,13 +4,13 @@ import styles from "./Button.module.scss"
 
 const cx = classNames.bind(styles)
 
-function Button({ to, href, primary, outline, small, text, large, disabled, rounded, children, ...passProps }) {
+function Button({ to, href, primary, outline, small, text, large, thin, disabled, rounded,upload, children, ...passProps }) {
     let Comp = 'button';
 
     const props = {
         ...passProps
     }
-    
+
     if (disabled) {
         Object.keys(props).forEach(key => {
             if (key.startsWith('on') && typeof props[key] === 'function') {
@@ -35,6 +35,8 @@ function Button({ to, href, primary, outline, small, text, large, disabled, roun
         text,
         disabled,
         rounded,
+        thin,
+        upload,
     })
     return (
         <Comp

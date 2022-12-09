@@ -103,6 +103,31 @@
     align-items: center;
 }
 
+.action-btn {
+    background-color: transparent;
+    padding: 3px 3px 0 3px;
+    margin-left: 16px;
+    cursor: pointer;
+    svg {
+        width: 21px;
+        height: 21px;
+    }
+}
+
+.user-avatar {
+    border-radius: 50%;
+    width: 32px;
+    margin-left: 24px;
+    cursor: pointer;
+}
+
+.action-upload {
+    height: 16px;
+    width: 16px;
+    margin-right: 8px;
+    border-color: rgba(22, 24, 35, 0.12);
+}
+
 .more-btn {
     background: transparent;
 }
