@@ -52,6 +52,7 @@
 
 .clear-btn,
 .loading {
+    display: flex;
     position: absolute;
     right: 52px;
     top: 50%;
@@ -59,6 +60,16 @@
     margin: 0 12px;
     color: rgba(22, 24, 35, .34);
     ;
+}
+
+.loading {
+    animation: spinner 0.8s linear infinite;
+}
+
+@keyframes spinner {
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
 }
 
 .search-btn {
