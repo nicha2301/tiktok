@@ -14,6 +14,7 @@ import Images from "~/components/Images";
 import Search from "../Search";
 
 
+
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
@@ -132,7 +133,7 @@ function Header() {
                         {currentUser ? (
                             <Images
                                 className={cx('user-avatar')}
-                                src="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/e59f8ba066516faafe8493daa00b6090.jpeg?x-expires=1670731200&x-signature=%2Foze%2Fp4k41lSBgAMjVGrFS17dRk%3D"
+                                src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/f019e41b0ca887f169230c977d8f6482~c5_720x720.jpeg?x-expires=1671001200&x-signature=fAyxm2RgDPf3g8DGOnVosW%2FH%2FnE%3D"
                                 alt="Chau Annh"
                             />
                         ) : (
